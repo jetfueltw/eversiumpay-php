@@ -27,7 +27,7 @@ class Signature
      */
     public static function generateNotify(array $payload, $secretKey)
     {
-        $baseString = self::buildBaseNotifyString($payload)/*.$secretKey*/;
+        $baseString = self::buildBaseNotifyString($payload).$secretKey;
 
         return self::md5Hash($baseString);
     }
@@ -55,7 +55,9 @@ class Signature
 
     private static function buildBaseNotifyString(array $payload)
     {
-        return $payload['mchid'] . $payload['orderid'] .$payload['fee'] . 'fen' . $payload['status'] .$payload['paychannel'];
+        // return $payload['mchid'] . $payload['orderid'] .$payload['fee'] . 'fen' . $payload['status'] .$payload['paychannel'];
+        //因為gameSign才有key比較安全, 所以對gameSign做驗證
+        return $payload['mchid'] . $payload['orderid'] . $payload['paychannel'] . $payload['status'];
     }
 
     private static function md5Hash($data)

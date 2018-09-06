@@ -19,7 +19,7 @@ trait NotifyWebhook
             return false;
         }
 
-        $signature = $payload['sign'];
+        $signature = $payload['gameSign'];
 
         return Signature::validateNotify($payload, $secretKey, $signature);
     }
