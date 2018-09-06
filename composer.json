@@ -1,6 +1,6 @@
 {
   "name": "jetfueltw/eversiumpay-php",
-  "description": "gaotong payment gateway php package",
+  "description": "eversiumpay payment gateway php package",
   "keywords": [
     "payment",
     "payment gateway"
