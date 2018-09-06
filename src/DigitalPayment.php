@@ -41,7 +41,7 @@ class DigitalPayment extends Payment
             'notifyUrl' => $notifyUrl,
             'transp' => $tradeNo,
         ]);
-var_dump($payload);
+
         //目前只支持支付寶掃碼 , 支持方式直接寫在網址上而非Data內
         $imgSrc = $this->parseResponse($this->httpClient->get('sdkServer/thirdpays/talipay/pay', $payload));
 
