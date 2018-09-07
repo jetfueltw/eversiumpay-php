@@ -15,7 +15,7 @@ trait NotifyWebhook
      */
     public function verifyNotifyPayload(array $payload, $secretKey)
     {
-        if (!isset($payload['sign'])) {
+        if (!isset($payload['gameSign'])) {
             return false;
         }
 
